@@ -1,0 +1,67 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model App.Domain.AppealsViewModel
+
+<h1>
+    Add an appeal
+</h1>
+<br>
+
+<br>
+
+
+<form method="post" asp-action="Add">
+    <p>
+        Appeal Description:
+        <textarea id="autoResizeTextarea" asp-for="Description" required rows="1" style="overflow:hidden;"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+        Appeal Deadline:
+        <input type="datetime-local" value="DeadlineDate" asp-for="DeadlineDate" required/>
+                <span asp-validation-for="DeadlineDate" class="text-danger"></span>
+        <input type="submit" value="Add" class="btn btn-outline-primary"/>
+        <a class="btn btn-outline-secondary" asp-area="" asp-controller="Appeals" asp-action="DoneList">Already Done Appeals</a>
+    </p>
+</form>
+
+
+<!-- ... -->
+<br>
+
+@if (Model.Appeals != null && Model.Appeals.Count == 0)
+{
+    <p>No appeals currently.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Appeal Description</th>
+            <th>Entry date</th>
+            <th>Appeal Deadline</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--For each appeal from the list create a POST form method to be able to remove appeals-->
+        <!--Also show description, entry and deadline dates and depending on the time show appropriate text color-->
+        @if (Model.Appeals != null)
+        {
+            foreach (var t in Model.Appeals)
+            {
+                <tr style=@t.Color>
+                    <td>
+                        <form method="post" asp-action="MarkAsDone">
+                            <input type="hidden" name="appealId" value="@t.Id"/>
+                            <button type="submit">Mark as done</button>
+                        </form>
+
+                    </td>
+                    <td>@t.Description</td>
+                    <td>@t.EntryDate</td>
+                    <td>@t.DeadlineDate</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}

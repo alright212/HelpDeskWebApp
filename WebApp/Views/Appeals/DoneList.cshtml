@@ -1,0 +1,39 @@
+@model App.Domain.AppealsViewModel
+
+<h1>
+    Done Appeals
+</h1>
+<p>Total finished appeals: @Model.DoneAppealsCount</p> <!-- Display the count -->
+<a class="btn btn-outline-primary go-back-button" asp-area="" asp-controller="Appeals" asp-action="List">Go Back</a><br>
+
+@if (Model.Appeals != null && Model.Appeals.Count == 0)
+{
+    <p>No done appeals currently.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Entry date</th>
+            <th>Done date</th>
+            <th>Deadline</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model.Appeals != null)
+        {
+            foreach (var appeal in Model.Appeals)
+            {
+                <tr style=@appeal.Color>
+                    <td>@appeal.Description</td>
+                    <td>@appeal.EntryDate</td>
+                    <td>@(appeal.IsDone ? appeal.DoneDate : "Not completed")</td>
+                    <td>@appeal.DeadlineDate</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+}

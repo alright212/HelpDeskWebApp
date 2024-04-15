@@ -1,0 +1,14 @@
+/Users/glenkink/WebApp/App.Domain/bin/Debug/net8.0/App.Domain.deps.json
+/Users/glenkink/WebApp/App.Domain/bin/Debug/net8.0/App.Domain.dll
+/Users/glenkink/WebApp/App.Domain/bin/Debug/net8.0/App.Domain.pdb
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.AssemblyInfoInputs.cache
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.AssemblyInfo.cs
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.csproj.CoreCompileInputs.cache
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.dll
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/refint/App.Domain.dll
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.pdb
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/ref/App.Domain.dll
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.csproj.AssemblyReference.cache
+/Users/glenkink/WebApp/App.Domain/bin/Debug/net8.0/App.Domain.runtimeconfig.json
+/Users/glenkink/WebApp/App.Domain/obj/Debug/net8.0/App.Domain.genruntimeconfig.cache
